@@ -5,7 +5,7 @@ import (
 	"os"
 
 	_ "github.com/joho/godotenv/autoload"
-	"github.com/kataras/iris/v12"
+	"github.com/kataras/iris"
 )
 
 var Greeting string = os.Getenv("GREETING")
