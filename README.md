@@ -1,75 +1,67 @@
-# KintoHub {name}-example
+# KintoHub Iris Example
 
 ## Overview
-TODO: Cool description / goal of what technology you are bringing onto the plate with what language. This should be sweet and concise.
 
-[Live Example](live/example/on/kintohub)
+Iris is a fast, simple yet fully featured and very efficient web framework for Go. It can be built easily for microservice on KintoHub!
+
+[Live Example](https://8caf94bb-c2e5-45cf-898d-ca5b19954cda.api.master.kintohub.com/iris-example/hello/world)
 
 __About KintoHub:__
 
 KintoHub aligns teams to ship & operate cloud native apps with ease. [Learn More](https://www.kintohub.com)
-## [Optional] Requirements
-
-- Ensure you have an account on [KintoHub](www.kintohub.com/sign-up)
-- [Optional] Required Kintohub features: [list features] (like pro sub features)
-- [Optional] specific packages needed for project to run
 
 ## Deployment
-1. Apply this template to your [Github](https://github.com/kintohub/example-template/generate)
-2. Create a [KintoBlockType](www.link.to.create.kintoblock.type.here) and include:
+1. Apply this template to your [Github](https://github.com/kintohub/iris-example/generate)
+2. Create a [Microservice Block](https://docs.kintohub.com/docs/kintoblocks/microservices) on KintoHub
+3. Connect your GithubApp to KintoHub and select the Repository you just generated on your account.
+4. Set the **name** of your kinto block
+5. Choose `Go` as the **language** and `1.11.4` as the **version**
+6. Set the **Build Command** as `go build -o main .`
+7. Set the **Start Command** as `./main`
+8. Set the **Port** as `80`
 
-You're now good to build! Click `Build Latest Commit`. Once complete, Click  Now click `Add To Project`.
+You're now good to go! Click **Create Microservice**. Now click **Build Latest Commit**
 
-3. Create Project and include:
+Once complete, Click **Add to Project**
 
-
-You're ready to go live Click `Deploy`
-
-## Build & Deployment Configurations
-Use the following examples for build or deployment environment variables:
-
-* [.build-example](/.build-example)
-* [.env-dev](/.env-dev)
-* [.env-prod](/.env-dev)
+Follow the instruction to create a new project. Once created, you should be able to [access your API endpoints](https://docs.kintohub.com/docs/features/operating/accessing-endpoints).
 
 ## Installation & Local Run
-
-1. npm install?
-2. npm run prod?
-
-## Test
-
-1. npm test
-
+Ensure you have go 1.11 or higher.
+```
+go run .
+```
 
 ## Usage
-The following works with our [Live Example](live/example/endpoint):
+### Optional Environment Variables
+Default value  = `Hello`, please refer to the `.env-example` file
+```
+GREETING=Hi
+```
 
-**API Call**
+### API Call
+Local:
 ```
-GET http://localhost:8080/hello
+curl -X GET http://localhost/hello/world
 ```
 
-**Response**
+On KintoHub:
 ```
+curl -X GET http://<EnvironmentHostName>/<KintoBlockName>/hello/world
+```
+Please refer to [Accessing API Endpoints](https://docs.kintohub.com/docs/features/operating/accessing-endpoints) for the setup instruction
+
+Try this [Live Example](https://8caf94bb-c2e5-45cf-898d-ca5b19954cda.api.master.kintohub.com/iris-example/hello/world) !
+
+### Response
+```json
 {
-"hello": "world"
+  "message": "Hello world"
 }
-```
+``` 
 
-## TODO: (Deleteme) Checklist
+## What's Next?
 
-- Create dev / prod example
-- Write clear instructions on how to add it to kintohub
-- (optional) write further instruction on how to fine tune it for production 
-- Create tags for the example repository (kintohub, examples, related technologies)
-- Create new example on [kinto-docs](docs.kintohub.com) (add to sidebar + create new page)
-- Double check call URLs and ensure they are appropriate to your username
+You can do a lot with KintoHub and your deployed application. Some helpful links for next steps that you may consider with this project.
 
-__Common Snippets:__
-
-Below are common urls/instructions that could be copy/pasted in some examples. (KintoBlock links, instructions for HA on KintoHub, etc)
-
-Please create PR for future snippets.
-
-
+* [Creating multiple environments](https://docs.kintohub.com/docs/projects/environments)
